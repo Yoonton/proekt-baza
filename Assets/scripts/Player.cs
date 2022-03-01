@@ -25,12 +25,12 @@ public class Player : MonoBehaviour
     {
         if(collision.tag == "Yes")
         {
-            gameScore++;
+            gameScore += 100;
             print(gameScore);
         }
         if(collision.tag == "No")
         {
-            gameScore--;
+            gameScore -= 50;
             print(gameScore);
         }
     }
