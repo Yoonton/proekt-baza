@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public int xVelocity = 5;
     public int yVelocity = 5;
     public int gameScore;
+    public static bool restart = false;
     private new Rigidbody2D rigidbody;
     void Start()
     {
@@ -25,13 +27,17 @@ public class Player : MonoBehaviour
     {
         if(collision.tag == "Yes")
         {
-            gameScore += 100;
+            gameScore++;
             print(gameScore);
         }
         if(collision.tag == "No")
         {
-            gameScore -= 50;
+            gameScore--;
             print(gameScore);
+        }
+        if(collision.tag == "Respawn")
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }
