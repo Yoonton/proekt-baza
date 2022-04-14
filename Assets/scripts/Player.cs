@@ -39,5 +39,9 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+        if(collision.tag == "Finish")
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }
